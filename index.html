@@ -7,19 +7,31 @@
 				width:500px;
 				height: 400px;
 			}
+			#mapUsr {
+				width:500px;
+				height: 400px;
+			}
  		</style>
  	</head>
-	<body>
-        	<p id='map'></p>
-  	        <script type="text/javascript" charset="utf-8">
-            function initMap(){
-                var mapDiv = document.getElementById("map");
-				var map = new google.maps.Map(mapDiv, {
-					center: {lat: 40.283743650362996, lng: -3.8191530513763428},
-					zoom: 15
-				});
- 			}
- 		</script>
+	<body onload="setup()">
+		<p id='geo'></p>
+		<p id="headmap">Mapa centrado en las Antipodas</p>
+		<p id='map'></p>
+		<div class="info_block_anti" float="left">
+			<h4 style="display:inline">Coordenada de las Antipodas</h4>
+			<div class="row"><span><span class="label">Latitud:</span><span class="value" id="lat_dec_ant">-47.75409797968</span></span></div>
+			<div class="row"><span><span class="label">Longitud:</span><span class="value" id="lon_dec_ant">75.76171875</span></span></div>
+		</div>
+		<p id="headmapusr">Mapa centrado en posicion actual del usuario (Recuerda dar permisos de tu ubicacion)</p>
+		<p id='mapUsr'></p>
+		<div class="info_block_user" float="left">
+			<h4 style="display:inline">Coordenada de tu posicion actual</h4>
+			<div class="row"><span><span class="label">Latitud:</span><span class="value" id="lat_dec_user"></span></span></div>
+			<div class="row"><span><span class="label">Longitud:</span><span class="value" id="lon_dec_user"></span></span></div>
+		</div>
+
+  	   <script type="text/javascript" src="index.js" charset="utf-8"></script>
 		<script src = "https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
 	</body>
 </html>
